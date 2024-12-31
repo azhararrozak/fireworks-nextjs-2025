@@ -67,7 +67,7 @@ export default function Home() {
     if (timeLeft) {
       return (
         <div className="flex flex-col items-center justify-center h-screen bg-gray-800 text-white">
-          <h1 className="text-3xl font-bold mb-4">Menunggu ~ 1 Januari 2025</h1>
+          <h1 className="text-3xl font-bold mb-4 text-center">Menunggu ~ 1 Januari 2025</h1>
           <div className="text-2xl bg-black bg-opacity-50 px-6 py-3 rounded-lg">
             {String(timeLeft.hours).padStart(2, "0")}:
             {String(timeLeft.minutes).padStart(2, "0")}:
@@ -78,7 +78,7 @@ export default function Home() {
     }
     return (
       <div className="flex items-center justify-center h-screen bg-gray-800 text-white">
-        <h1 className="text-3xl font-bold">Website ini hanya dapat diakses pada 1 Januari 2025</h1>
+        <h1 className="text-3xl font-bold text-center">Website ini hanya dapat diakses pada 1 Januari 2025</h1>
       </div>
     );
   }
