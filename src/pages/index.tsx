@@ -4,8 +4,16 @@ import { ReactTyped } from "react-typed";
 import Head from "next/head";
 
 export default function Home() {
+  
   const [isJanuaryFirst2025, setIsJanuaryFirst2025] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(null);
+  
+  interface TimeLeft {
+    hours: number;
+    minutes: number;
+    seconds: number;
+  }
+
+  const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
 
   useEffect(() => {
     const now = new Date();
@@ -24,7 +32,7 @@ export default function Home() {
     ) {
       const interval = setInterval(() => {
         const currentTime = new Date();
-        const difference = targetDate - currentTime;
+        const difference = targetDate.getTime() - currentTime.getTime();
 
         if (difference <= 0) {
           setIsJanuaryFirst2025(true);
